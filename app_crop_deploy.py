@@ -3,7 +3,6 @@ import streamlit as st
 from PIL import Image
 from ultralytics import YOLO
 import numpy as np
-import cv2
 
 # Streamlit app title
 st.title("AI-Powered Early Detection of Crop Diseases in Kenyan Smallholder Farms")
@@ -41,7 +40,6 @@ def imgPredCNN(predModel, predImg):
 
 # Function for storing image for retraining
 def storeImage(saving_image, new_label, image_title):
-    #cv2.imwrite(f"./data_collection_model_evaluation/{new_label}/{image_title}.png", saving_image)
     saving_image.save(f"./data_collection_model_evaluation/{new_label}/{image_title}.png")
 
 # Load Maize Crop Trained Model
