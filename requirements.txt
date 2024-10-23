@@ -26,4 +26,4 @@ torchmetrics==0.8.0
 torchvision==0.14.1
 tornado==6.3.2
 tqdm==4.65.0
-ultralytics
+git+https://github.com/ultralytics/ultralytics.git
