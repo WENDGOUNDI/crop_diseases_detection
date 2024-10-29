@@ -70,15 +70,15 @@ if uploaded_image is not None:
     # Inspect button
     if st.button("Inspect"):
         # Select the model based on checkbox values
-        if use_maize_model and not [use_beans_model, use_cassava_model]:
+        if use_maize_model and not use_beans_model and not use_cassava_model:
             prediction = imgPredCNN(model_maize, image)
             #st.write(prediction)
             st.title(f":green[Crimping Evaluation: {prediction}]")
-        elif use_beans_model and not [use_cassava_model, use_maize_model]:
+        elif use_beans_model and not use_cassava_model and not use_maize_model:
             prediction = imgPredCNN(model_beans, image)
             #st.write(prediction)
             st.title(f":green[Crimping Evaluation: {prediction}]")
-        elif use_cassava_model and not [use_maize_model, use_beans_model]:
+        elif use_cassava_model and not use_maize_model and not use_beans_model:
             prediction = imgPredCNN(model_cassava, image)
             #st.write(prediction)
             st.title(f":green[Crimping Evaluation: {prediction}]")
