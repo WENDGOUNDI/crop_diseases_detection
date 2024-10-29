@@ -3,6 +3,11 @@ import streamlit as st
 from PIL import Image
 from ultralytics import YOLO
 import numpy as np
+import cv2
+from pathlib import Path
+
+# Create the "data_collection_model_evaluation" if it doesn't exist
+Path("./data_collection_model_evaluation").mkdir(parents=True, exist_ok=True)
 
 # Streamlit app title
 st.title("AI-Powered Early Detection of Crop Diseases in Kenyan Smallholder Farms")
@@ -40,6 +45,7 @@ def imgPredCNN(predModel, predImg):
 
 # Function for storing image for retraining
 def storeImage(saving_image, new_label, image_title):
+    #cv2.imwrite(f"./data_collection_model_evaluation/{new_label}/{image_title}.png", saving_image)
     saving_image.save(f"./data_collection_model_evaluation/{new_label}/{image_title}.png")
 
 # Load Maize Crop Trained Model
@@ -99,3 +105,5 @@ with st.sidebar:
         elif input_field.upper() == "NG":
             storeImage(image, input_field.upper(), uploaded_image_file_name)
             st.success("Done!")
+
+
