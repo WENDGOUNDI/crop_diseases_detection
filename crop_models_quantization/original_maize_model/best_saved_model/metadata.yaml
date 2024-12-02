@@ -1,0 +1,19 @@
+description: Ultralytics YOLOv8n-cls model trained on C:/Users/savadogo_abdoul/Desktop/vit_crop/split_data_maize/
+author: Ultralytics
+date: '2024-12-02T08:22:38.968914'
+version: 8.3.39
+license: AGPL-3.0 License (https://ultralytics.com/license)
+docs: https://docs.ultralytics.com
+stride: 1
+task: classify
+batch: 1
+imgsz:
+- 640
+- 640
+names:
+  0: Common Rust
+  1: Gray Leaf Spot
+  2: Maize Lethal Necrosis
+  3: Maize Streak Virus
+  4: Northern Leaf Spot
+  5: healthy
